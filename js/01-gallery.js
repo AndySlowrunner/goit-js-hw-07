@@ -27,11 +27,10 @@ function createGalleryMarkup(galleryItems) {
 
 function onImageClick(evt) {
     evt.preventDefault();
-    if (evt.target.nodeName !== 'IMG') {
-        return;
-    }
+    const curentImage = evt.target.dataset.source;
 
-
-    // return evt.target.dataset.source;
-}
-console.log(onImageClick(evt));
+    const instance = basicLightbox.create(
+        `<img src="${curentImage}">`
+    );
+    instance.show()
+};
