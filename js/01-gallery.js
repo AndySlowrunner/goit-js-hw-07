@@ -27,6 +27,9 @@ function createGalleryMarkup(galleryItems) {
 
 function onImageClick(evt) {
     evt.preventDefault();
+    if (evt.target.nodeName !== 'IMG') {
+        return;
+    };
     const curentImage = evt.target.dataset.source;
 
     const instance = basicLightbox.create(
